@@ -1,6 +1,8 @@
 import React from 'react';
 import {useEffect,useRef,useState} from 'react';
 import {Inertia} from '@inertiajs/inertia';
+import Main from "@/Layouts/Main.jsx";
+import LoginLayout from "@/Layouts/LoginLayout.jsx";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -17,27 +19,10 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Email:
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
-                <br />
-                <label>Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </label>
-                <br />
-                <button type="submit">Login</button>
-            </form>
+
         </div>
+
+
     );
 };
 

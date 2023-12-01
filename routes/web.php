@@ -16,8 +16,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Login');
+
+   return redirect()->route('login');
 });
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+})->name('login');
 
 Route::middleware([
     'auth:sanctum',
@@ -27,4 +32,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+});
+
+Route::get('/home', function () {
+    return Inertia::render('Home');
 });
