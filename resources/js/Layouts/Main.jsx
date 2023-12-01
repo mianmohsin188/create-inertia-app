@@ -4,7 +4,7 @@ import Navbar from "@/Layouts/Navbar.jsx";
 import Sidebar from "@/Layouts/Sidebar";
 import Login from "@/Pages/Login.jsx";
 const Main = ({children}) => {
-    console.log('Children:', children);
+    
     return (
 
         <div>

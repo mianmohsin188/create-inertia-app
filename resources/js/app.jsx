@@ -4,6 +4,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { InertiaProgress } from '@inertiajs/progress';
 
+
+
 // Import your main layout component
 import MainLayout from './Layouts/Main.jsx';
 
