@@ -5,6 +5,8 @@ import farmerImage from "../../images/farmerImage.png";
 
 import React from 'react';
 import { useForm } from '@inertiajs/inertia-react';
+import {Inertia} from "@inertiajs/inertia";
+
 
 const Login = () => {
   const { data, setData, post, processing, errors } = useForm({
@@ -15,16 +17,23 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     errors.email = '';
+    errors.password = '';
+
+
+
+
+
+
 
     post('/login', {
         onSuccess: () => {
 
           // Redirect to the dashboard or any other page after successful login
           // You can customize the redirect logic based on your application's needs
-            window.location.href = '/dashboard';
+
         },
       });
-    
+
   };
 
   return (
@@ -67,7 +76,7 @@ const Login = () => {
                   <span className="text-danger">{errors.email}</span>
                   : ''
                   }
-                 
+
                   </div>
                   <div className="mt-2">
                     <label>Password:</label>
@@ -78,10 +87,13 @@ const Login = () => {
                       value={data.password}
                       onChange={(e) => setData('password', e.target.value)}
                     />
-                    {errors.password && <div>{errors.password}</div>}
+                      {errors?.password?
+                          <span className="text-danger">{errors.password}</span>
+                          : ''
+                      }
                   </div>
                   <div>
-                    <button type="submit" className="btn btn-primary mt-3  form-control" disabled={processing}>
+                    <button type="submit" className="btn btn-primary mt-4 p-2  form-control" disabled={processing}>
                       {processing ? 'Logging In...' : 'Login'}
                     </button>
                   </div>

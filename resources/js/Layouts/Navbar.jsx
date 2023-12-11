@@ -1,30 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-const Navbar = () => {
+import {Inertia} from "@inertiajs/inertia";
+import {InertiaLink} from "@inertiajs/inertia-react";
+
+import logoIcon from "../../images/logo-icon.png";
+import logoText from "../../images/logo-text.png";
+const Navbar = ({auth}) => {
     return (
         <header className="topbar" data-navbarbg="skin5">
             <nav className="navbar top-navbar navbar-expand-md navbar-dark">
                 <div className="navbar-header" data-logobg="skin5">
 
 
-                    <a className="navbar-brand" href="index.html">
+                    <InertiaLink className="navbar-brand" href="/dashboard">
 
                         <b className="logo-icon ps-2">
 
-                            <img src="../../assets/images/logo-icon.png" alt="homepage" className="light-logo"/>
+                            <img src={logoIcon} alt="homepage" className="light-logo"/>
 
                         </b>
 
                         <span className="logo-text">
 
-                            <img src="../../assets/images/logo-text.png" alt="homepage" className="light-logo"/>
+                            <img src={logoText} alt="homepage" className="light-logo"/>
 
                         </span>
 
-                    </a>
+                    </InertiaLink>
 
-                    <a className="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                        className="ti-menu ti-close"></i></a>
+                    <InertiaLink className="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                        className="ti-menu ti-close"></i></InertiaLink>
                 </div>
 
                 <div className="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
@@ -35,29 +40,28 @@ const Navbar = () => {
                             data-sidebartype="mini-sidebar"><i className="mdi mdi-menu font-24"></i></a></li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="@/Layouts/Navbar.jsx" id="navbarDropdown" role="button"
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <span className="d-none d-md-block">Create New <i
                                     className="fa fa-angle-down"></i></span>
                                 <span className="d-block d-md-none"><i className="fa fa-plus"></i></span>
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Action</a></li>
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr className="dropdown-divider"/>
                                 </li>
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
 
-                        <li className="nav-item search-box">
-                            <a className="nav-link waves-effect waves-dark"
+                        <li className="nav-item search-box"><a className="nav-link waves-effect waves-dark"
                                                                href="javascript:void(0)"><i
                             className="ti-search"></i></a>
                             <form className="app-search position-absolute">
-                                <input type="text" className="form-control" placeholder="Search &amp; enter"/> <a
-                                    className="srh-btn"><i className="ti-close"/></a>
+                                <input type="text" className="form-control" placeholder="Search &amp; enter" /> <a
+                                    className="srh-btn"><i className="ti-close"></i></a>
                             </form>
                         </li>
                     </ul>
@@ -65,22 +69,22 @@ const Navbar = () => {
                     <ul className="navbar-nav float-end">
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="@/Layouts/Navbar.jsx#" id="navbarDropdown" role="button"
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="mdi mdi-bell font-24"></i>
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Action</a></li>
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr className="dropdown-divider" />
                                 </li>
-                                <li><a className="dropdown-item" href="@/Layouts/Navbar.jsx#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle waves-effect waves-dark" href="@/Layouts/Navbar.jsx#" id="2"
+                            <a className="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2"
                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i className="font-24 mdi mdi-comment-processing"></i>
                             </a>
@@ -112,7 +116,7 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </a>
-                                            {/*Message */}
+
                                             <a href="javascript:void(0)" className="link border-top">
                                                 <div className="d-flex no-block align-items-center p-10">
                                                     <span className="btn btn-primary btn-circle"><i
@@ -141,9 +145,9 @@ const Navbar = () => {
                         </li>
 
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="@/Layouts/Navbar.jsx#"
+                            <a className="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../assets/images/users/1.jpg" alt="user" className="rounded-circle"
+                                <img src={auth?.user?.profile_photo_url} alt="user" className="rounded-circle"
                                      width="31" />
                             </a>
                             <ul className="dropdown-menu dropdown-menu-end user-dd animated"
@@ -161,8 +165,8 @@ const Navbar = () => {
                                 <a className="dropdown-item" href="javascript:void(0)"><i
                                     className="ti-settings me-1 ms-1"></i> Account Setting</a>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="javascript:void(0)"><i
-                                    className="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                <InertiaLink className="dropdown-item" method="post" href='/logout'><i
+                                    className="fa fa-power-off me-1 ms-1"></i> Logout</InertiaLink>
                                 <div className="dropdown-divider"></div>
                                 <div className="ps-4 p-10"><a href="javascript:void(0)"
                                                               className="btn btn-sm btn-success btn-rounded text-white">View

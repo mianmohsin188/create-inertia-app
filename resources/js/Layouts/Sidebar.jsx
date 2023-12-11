@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {InertiaLink} from "@inertiajs/inertia-react";
+import currentRoute from "@/utility/helper.js";
 const Sidebar = () => {
     return (
         <aside className="left-sidebar" data-sidebarbg="skin5">
@@ -8,14 +10,28 @@ const Sidebar = () => {
 
                 <nav className="sidebar-nav">
                     <ul id="sidebarnav" className="pt-4">
-                        <li className="sidebar-item"><a className="sidebar-link waves-effect waves-dark sidebar-link"
-                                                        href="index.html" aria-expanded="false"><i
-                            className="mdi mdi-view-dashboard"></i><span
-                            className="hide-menu">Dashboardsss</span></a></li>
-                        <li className="sidebar-item"><a className="sidebar-link waves-effect waves-dark sidebar-link"
-                                                        href="charts.html" aria-expanded="false"><i
-                            className="mdi mdi-chart-bar"></i><span
-                            className="hide-menu">Charts</span></a></li>
+                        {
+                            currentRoute() == "/dashboard" ? <li className="sidebar-item"><InertiaLink className="sidebar-link waves-effect waves-dark sidebar-link active"
+                                                                          href="/dashboard" aria-expanded="false"><i
+                                    className="mdi mdi-view-dashboard"></i><span
+                                    className="hide-menu">Dashboard</span></InertiaLink></li> : <li className="sidebar-item"><InertiaLink className="sidebar-link waves-effect waves-dark sidebar-link"
+                                                                          href="/dashboard" aria-expanded="false"><i
+                                    className="mdi mdi-view-dashboard"></i><span
+                                    className="hide-menu">Dashboard</span></InertiaLink></li>
+                        }
+                        {
+                            currentRoute() == "/users" ?
+                                <li className="sidebar-item"><a className="sidebar-link waves-effect waves-dark sidebar-link active" href="/users" aria-expanded="false">
+                                    <i className="mdi mdi-account-multiple"></i>
+                                    <span className="hide-menu">Users</span></a></li>
+                                  :
+                                <li className="sidebar-item"><a className="sidebar-link waves-effect waves-dark sidebar-link"
+                                                                                                               href="/users" aria-expanded="false"><i
+                                className="mdi mdi-account-multiple"></i><span
+                                className="hide-menu">Users</span></a></li>
+                        }
+
+
                         <li className="sidebar-item"><a className="sidebar-link waves-effect waves-dark sidebar-link"
                                                         href="widgets.html" aria-expanded="false"><i
                             className="mdi mdi-chart-bubble"></i><span

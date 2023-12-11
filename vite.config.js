@@ -7,7 +7,8 @@ export default defineConfig({
         react(),
         laravel({
             input: [
-                'resources/js/app.js',
+                'resources/css/app.css',
+                'resources/js/app.jsx',
                 'resources/themeAssets/assets/images/favicon.png',
                 'resources/themeAssets/assets/libs/flot/css/float-chart.css',
                 'resources/themeAssets/assets/dist/css/style.min.css',

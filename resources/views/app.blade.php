@@ -23,7 +23,14 @@
         @inertiaHead
 
     </head>
-    <body class="font-sans antialiased">
+    <body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
         @inertia
         @vite([
         'resources/themeAssets/assets/libs/jquery/dist/jquery.min.js',

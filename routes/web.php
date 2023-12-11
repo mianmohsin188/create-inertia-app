@@ -34,4 +34,21 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/users', function () {
+        return Inertia::render('Users/Users');
+    })->name('users');
+});
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/users/all', [\App\Http\Controllers\UserController::class, 'index'])->name('getAllUsers');
+    });
+
 
