@@ -1,7 +1,7 @@
 
 
 import logoImage from "../../images/logo.png";
-import farmerImage from "../../images/farmerImage.png";
+import farmerImage from "../../images/farmer.jpg";
 
 import React from 'react';
 import { useForm } from '@inertiajs/inertia-react';
@@ -39,11 +39,12 @@ const Login = () => {
   return (
     <div>
       <div className="row">
-        <div className="col-lg-7">
+        <div className="col-lg-6 mt-4" style={{marginLeft:"32px"}}>
           <img
+              className="m-0"
             src={farmerImage}
             alt="Farmer Avatar"
-            style={{ width: "100%", height: "125%" }}
+            style={{ width: "90%", height: "100%" }}
           />
         </div>
         <div className="col-5">
